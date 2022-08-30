@@ -155,7 +155,8 @@ namespace Greenshot.Editor.Forms {
 			this.magnifyMenuItem = new GreenshotToolStripMenuItem();
 			this.btnFillColor = new ToolStripColorButton();
 			this.btnLineColor = new ToolStripColorButton();
-			this.lineThicknessLabel = new GreenshotToolStripLabel();
+            this.btnBorderColor = new ToolStripColorButton();
+            this.lineThicknessLabel = new GreenshotToolStripLabel();
 			this.lineThicknessUpDown = new ToolStripNumericUpDown();
 			this.counterLabel = new GreenshotToolStripLabel();
 			this.counterUpDown = new ToolStripNumericUpDown();
@@ -353,9 +354,9 @@ namespace Greenshot.Editor.Forms {
 			// 
 			// btnCursor
 			// 
-			this.btnCursor.Checked = true;
-			this.btnCursor.CheckOnClick = true;
-			this.btnCursor.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.btnCursor.CheckOnClick = true;
+            this.btnCursor.Checked = true;
+            this.btnCursor.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.btnCursor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			this.btnCursor.Image = ((System.Drawing.Image)(resources.GetObject("btnCursor.Image")));
 			this.btnCursor.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -435,10 +436,10 @@ namespace Greenshot.Editor.Forms {
 			this.btnSpeechBubble.LanguageKey = "editor_speechbubble";
 			this.btnSpeechBubble.Name = "btnSpeechBubble";
 			this.btnSpeechBubble.Click += new System.EventHandler(this.BtnSpeechBubbleClick);
-			// 
-			// btnStepLabel
-			// 
-			this.btnStepLabel.CheckOnClick = true;
+            // 
+            // btnStepLabel
+            // 
+            this.btnStepLabel.CheckOnClick = true;
 			this.btnStepLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			this.btnStepLabel.Image = ((System.Drawing.Image)(resources.GetObject("btnStepLabel01.Image")));
 			this.btnStepLabel.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -1046,7 +1047,8 @@ namespace Greenshot.Editor.Forms {
 									this.highlightModeButton,
 									this.btnFillColor,
 									this.btnLineColor,
-									this.lineThicknessLabel,
+                                    this.btnBorderColor,
+                                    this.lineThicknessLabel,
 									this.lineThicknessUpDown,
 									this.fontFamilyComboBox,
 									this.fontSizeLabel,
@@ -1210,14 +1212,23 @@ namespace Greenshot.Editor.Forms {
 			// 
 			this.btnLineColor.BackColor = System.Drawing.Color.Transparent;
 			this.btnLineColor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.btnLineColor.Image = ((System.Drawing.Image)(resources.GetObject("btnLineColor.Image")));
-			this.btnLineColor.LanguageKey = "editor_forecolor";
+            this.btnLineColor.Image = ((System.Drawing.Image)(resources.GetObject("btnLineColor.Image")));
+            this.btnLineColor.LanguageKey = "editor_forecolor";
 			this.btnLineColor.Name = "btnLineColor";
 			this.btnLineColor.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(222)))), ((int)(((byte)(250)))));
-			// 
-			// counterLabel
-			// 
-			this.counterLabel.LanguageKey = "editor_counter_startvalue";
+            // 
+            // btnBorderdColor
+            // 
+            this.btnBorderColor.BackColor = System.Drawing.Color.Transparent;
+            this.btnBorderColor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnBorderColor.Image = ((System.Drawing.Image)(resources.GetObject("btnLineColor.Image")));
+            this.btnBorderColor.LanguageKey = "editor_bordercolor";
+            this.btnBorderColor.Name = "btnBorderColor";
+            this.btnBorderColor.SelectedColor = System.Drawing.Color.Transparent;
+            // 
+            // counterLabel
+            // 
+            this.counterLabel.LanguageKey = "editor_counter_startvalue";
 			this.counterLabel.Name = "counterLabel";
 			// 
 			// counterUpDown
@@ -2030,7 +2041,8 @@ namespace Greenshot.Editor.Forms {
 		private NonJumpingPanel panel1;
 		private ToolStripColorButton btnFillColor;
 		private ToolStripColorButton btnLineColor;
-		private System.Windows.Forms.ContextMenuStrip zoomMenuStrip;
+        private ToolStripColorButton btnBorderColor;
+        private System.Windows.Forms.ContextMenuStrip zoomMenuStrip;
 		private System.Windows.Forms.ToolStripMenuItem zoomInMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem zoomOutMenuItem;
 		private System.Windows.Forms.ToolStripSeparator zoomMenuSeparator1;

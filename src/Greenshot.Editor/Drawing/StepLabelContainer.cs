@@ -147,6 +147,8 @@ namespace Greenshot.Editor.Drawing
         {
             AddField(GetType(), FieldType.FILL_COLOR, Color.DarkRed);
             AddField(GetType(), FieldType.LINE_COLOR, Color.White);
+            AddField(GetType(), FieldType.LINE_THICKNESS, 2);
+            AddField(GetType(), FieldType.BORDER_COLOR, Color.Black );
             AddField(GetType(), FieldType.FLAGS, FieldFlag.COUNTER);
         }
 
@@ -196,25 +198,34 @@ namespace Greenshot.Editor.Drawing
             var rect = new NativeRect(Left, Top, Width, Height).Normalize();
             Color fillColor = GetFieldValueAsColor(FieldType.FILL_COLOR);
             Color lineColor = GetFieldValueAsColor(FieldType.LINE_COLOR);
+            Color borderColor = GetFieldValueAsColor(FieldType.BORDER_COLOR);
+            int line_thickness = GetFieldValueAsInt(FieldType.LINE_THICKNESS);
             if (_drawAsRectangle)
             {
-                RectangleContainer.DrawRectangle(rect, graphics, rm, 0, Color.Transparent, fillColor, false);
+                RectangleContainer.DrawRectangle(rect, graphics, rm, line_thickness, borderColor, fillColor, false);
             }
             else
             {
-                EllipseContainer.DrawEllipse(rect, graphics, rm, 0, Color.Transparent, fillColor, false);
+                EllipseContainer.DrawEllipse(rect, graphics, rm, line_thickness, borderColor, fillColor, false);
             }
 
             float fontSize = Math.Min(Math.Abs(Width), Math.Abs(Height)) / 1.4f;
-            using FontFamily fam = new FontFamily(FontFamily.GenericSansSerif.Name);
-            using Font font = new Font(fam, fontSize, FontStyle.Bold, GraphicsUnit.Pixel);
-            TextContainer.DrawText(graphics, rect, 0, lineColor, false, _stringFormat, text, font);
+            if (text.Length> 1)
+            {
+                fontSize /= 1.2f;
+            }
+            if (fontSize > 1)
+            {
+                using FontFamily fam = new FontFamily(FontFamily.GenericSansSerif.Name);
+                using Font font = new Font(fam, fontSize, FontStyle.Bold, GraphicsUnit.Pixel);
+                TextContainer.DrawText(graphics, rect, 0, lineColor, false, _stringFormat, text, font);
+            }
         }
 
         public override bool ClickableAt(int x, int y)
         {
             var rect = new NativeRect(Left, Top, Width, Height).Normalize();
-            Color fillColor = GetFieldValueAsColor(FieldType.FILL_COLOR);
+            Color fillColor = GetFieldValueAsColor(FieldType.LINE_COLOR);
             if (_drawAsRectangle)
             {
                 return RectangleContainer.RectangleClickableAt(rect, 0, fillColor, x, y);
