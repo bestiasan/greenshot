@@ -1265,7 +1265,7 @@ namespace Greenshot.Editor.Forms
             // TODO: This is actually risky, if there are no references than the objects may be garbage collected
             new BidirectionalBinding(btnFillColor, "SelectedColor", _surface.FieldAggregator.GetField(FieldType.FILL_COLOR), "Value", NotNullValidator.GetInstance());
             new BidirectionalBinding(btnLineColor, "SelectedColor", _surface.FieldAggregator.GetField(FieldType.LINE_COLOR), "Value", NotNullValidator.GetInstance());
-            new BidirectionalBinding(btnBorderColor, "SelectedColor", _surface.FieldAggregator.GetField(FieldType.BORDER_COLOR), "Value", NotNullValidator.GetInstance());            
+            new BidirectionalBinding(btnFontColor, "SelectedColor", _surface.FieldAggregator.GetField(FieldType.FONT_COLOR), "Value", NotNullValidator.GetInstance());            
             new BidirectionalBinding(lineThicknessUpDown, "Value", _surface.FieldAggregator.GetField(FieldType.LINE_THICKNESS), "Value", DecimalIntConverter.GetInstance(),
                 NotNullValidator.GetInstance());
             new BidirectionalBinding(blurRadiusUpDown, "Value", _surface.FieldAggregator.GetField(FieldType.BLUR_RADIUS), "Value", DecimalIntConverter.GetInstance(),
@@ -1305,7 +1305,7 @@ namespace Greenshot.Editor.Forms
                 var props = (FieldAggregator)_surface.FieldAggregator;
                 btnFillColor.Visible = props.HasFieldValue(FieldType.FILL_COLOR);
                 btnLineColor.Visible = props.HasFieldValue(FieldType.LINE_COLOR);
-                btnBorderColor.Visible = props.HasFieldValue(FieldType.BORDER_COLOR);
+                btnFontColor.Visible = props.HasFieldValue(FieldType.FONT_COLOR);
                 lineThicknessLabel.Visible = lineThicknessUpDown.Visible = props.HasFieldValue(FieldType.LINE_THICKNESS);
                 blurRadiusLabel.Visible = blurRadiusUpDown.Visible = props.HasFieldValue(FieldType.BLUR_RADIUS);
                 previewQualityLabel.Visible = previewQualityUpDown.Visible = props.HasFieldValue(FieldType.PREVIEW_QUALITY);

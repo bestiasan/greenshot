@@ -80,7 +80,7 @@ Also, we would highly appreciate if you checked whether a tracker item already e
 		<resource name="editor_autocrop">Auto crop</resource>
 		<resource name="editor_autocrop_not_possible">Auto crop not possible</resource>
 		<resource name="editor_backcolor">Fill color (0-9)</resource>
-        <resource name="editor_bordercolor">Border color</resource>
+        <resource name="editor_fontcolor">Font color</resource>
         <resource name="editor_blur_radius">Blur radius</resource>
 		<resource name="editor_bold">Bold</resource>
 		<resource name="editor_border">Border</resource>

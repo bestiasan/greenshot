@@ -155,7 +155,7 @@ namespace Greenshot.Editor.Forms {
 			this.magnifyMenuItem = new GreenshotToolStripMenuItem();
 			this.btnFillColor = new ToolStripColorButton();
 			this.btnLineColor = new ToolStripColorButton();
-            this.btnBorderColor = new ToolStripColorButton();
+            this.btnFontColor = new ToolStripColorButton();
             this.lineThicknessLabel = new GreenshotToolStripLabel();
 			this.lineThicknessUpDown = new ToolStripNumericUpDown();
 			this.counterLabel = new GreenshotToolStripLabel();
@@ -1047,7 +1047,7 @@ namespace Greenshot.Editor.Forms {
 									this.highlightModeButton,
 									this.btnFillColor,
 									this.btnLineColor,
-                                    this.btnBorderColor,
+                                    this.btnFontColor,
                                     this.lineThicknessLabel,
 									this.lineThicknessUpDown,
 									this.fontFamilyComboBox,
@@ -1217,14 +1217,14 @@ namespace Greenshot.Editor.Forms {
 			this.btnLineColor.Name = "btnLineColor";
 			this.btnLineColor.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(222)))), ((int)(((byte)(250)))));
             // 
-            // btnBorderdColor
+            // btnFontColor
             // 
-            this.btnBorderColor.BackColor = System.Drawing.Color.Transparent;
-            this.btnBorderColor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnBorderColor.Image = ((System.Drawing.Image)(resources.GetObject("btnLineColor.Image")));
-            this.btnBorderColor.LanguageKey = "editor_bordercolor";
-            this.btnBorderColor.Name = "btnBorderColor";
-            this.btnBorderColor.SelectedColor = System.Drawing.Color.Transparent;
+            this.btnFontColor.BackColor = System.Drawing.Color.Transparent;
+            this.btnFontColor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnFontColor.Image = ((System.Drawing.Image)(resources.GetObject("btnFontColor.Image")));
+            this.btnFontColor.LanguageKey = "editor_fontcolor";
+            this.btnFontColor.Name = "btnFontColor";
+            this.btnFontColor.SelectedColor = System.Drawing.Color.Transparent;
             // 
             // counterLabel
             // 
@@ -2041,7 +2041,7 @@ namespace Greenshot.Editor.Forms {
 		private NonJumpingPanel panel1;
 		private ToolStripColorButton btnFillColor;
 		private ToolStripColorButton btnLineColor;
-        private ToolStripColorButton btnBorderColor;
+        private ToolStripColorButton btnFontColor;
         private System.Windows.Forms.ContextMenuStrip zoomMenuStrip;
 		private System.Windows.Forms.ToolStripMenuItem zoomInMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem zoomOutMenuItem;

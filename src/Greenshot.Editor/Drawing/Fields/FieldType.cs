@@ -52,12 +52,12 @@ namespace Greenshot.Editor.Drawing.Fields
         public static readonly IFieldType PREPARED_FILTER_HIGHLIGHT = new FieldType(nameof(PREPARED_FILTER_HIGHLIGHT));
         public static readonly IFieldType FLAGS = new FieldType(nameof(FLAGS));
         public static readonly IFieldType CROPMODE = new FieldType(nameof(CROPMODE));
-        public static readonly IFieldType BORDER_COLOR = new FieldType(nameof(BORDER_COLOR));
+        public static readonly IFieldType FONT_COLOR = new FieldType(nameof(FONT_COLOR));
 
         public static IFieldType[] Values =
         {
             ARROWHEADS, BLUR_RADIUS, BRIGHTNESS, FILL_COLOR, FONT_BOLD, FONT_FAMILY, FONT_ITALIC, FONT_SIZE, TEXT_HORIZONTAL_ALIGNMENT, TEXT_VERTICAL_ALIGNMENT, HIGHLIGHT_COLOR,
-            LINE_COLOR, LINE_THICKNESS, MAGNIFICATION_FACTOR, PIXEL_SIZE, PREVIEW_QUALITY, SHADOW, PREPARED_FILTER_OBFUSCATE, PREPARED_FILTER_HIGHLIGHT, FLAGS, CROPMODE, BORDER_COLOR
+            LINE_COLOR, LINE_THICKNESS, MAGNIFICATION_FACTOR, PIXEL_SIZE, PREVIEW_QUALITY, SHADOW, PREPARED_FILTER_OBFUSCATE, PREPARED_FILTER_HIGHLIGHT, FLAGS, CROPMODE, FONT_COLOR
         };
 
         public string Name { get; set; }
